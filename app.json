@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FlowerShop",
-    "slug": "FlowerShop",
+    "slug": "flowershop",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e70baee9-f01f-4a80-a29f-70956b1639f0"
+      }
+    },
+    "owner": "arunkumar-iitkgp"
   }
 }
