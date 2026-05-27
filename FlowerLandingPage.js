@@ -1,23 +1,103 @@
 import React from 'react';
-import { View, Text, Image, Button, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function FlowerlandingPage() {
   return (
-    <ScrollView style={styles.container}>
-      {/* Header Section */}
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+      {/* Top Banner Image */}
+      <View style={styles.imageContainer}>
+        <Image 
+          source={{ uri: 'https://images.unsplash.com/photo-1463043254199-7a3efd782ad1?q=80&w=2069&auto=format&fit=crop' }} 
+          style={styles.image} 
+        />
+      </View>
+
+      {/* Search Bar Section */}
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Search for flowers..."
+        />
+      </View>
+
+      {/* Featured Flowers Horizontal Scroll Section */}
+      <View style={styles.featuredSection}>
+        <Text style={styles.sectionTitle}>Featured Flowers</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.flowerCard}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1686125616977-34f6d5979eb1?q=80&w=1856&auto=format&fit=crop' }}
+              style={styles.flowerImage}
+            />
+            <Text style={styles.flowerTitle}>White Base</Text>
+          </View>
+
+          <View style={styles.flowerCard}>
+            {/* FIXED: Added style here so the Red Rose image actually displays */}
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1581264692636-3cf6f29655c2?q=80&w=1887&auto=format&fit=crop' }}
+              style={styles.flowerImage} 
+            />
+            <Text style={styles.flowerTitle}>Red Rose</Text>
+          </View>
+
+          <View style={styles.flowerCard}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1579847621515-b40fcc20831e?q=80&w=1887&auto=format&fit=crop' }}
+              style={styles.flowerImage}
+            />
+            <Text style={styles.flowerTitle}>Lily</Text>
+          </View>
+
+          <View style={styles.flowerCard}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1487435636644-3ad040f0195b?q=80&w=2070&auto=format&fit=crop' }}
+              style={styles.flowerImage}
+            />
+            <Text style={styles.flowerTitle}>Tulip</Text>
+          </View>
+
+          <View style={styles.flowerCard}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1556216750-2108e1e54e9a?q=80&w=1887&auto=format&fit=crop' }}
+              style={styles.flowerImage}
+            />
+            <Text style={styles.flowerTitle}>Orchid</Text>
+          </View>
+
+          <View style={styles.flowerCard}>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1695112691738-5227cabb206f?q=80&w=1887&auto=format&fit=crop' }}
+              style={styles.flowerImage}
+            />
+            <Text style={styles.flowerTitle}>Chrysanthemums</Text>
+          </View>
+        </ScrollView>
+      </View>
+
+      {/* Header / Intro Section */}
       <View style={styles.header}>
         <Text style={styles.headerText}>Blooming Flowers</Text>
         <Text style={styles.subHeaderText}>Fresh and Beautiful Flowers Delivered to Your Doorstep</Text>
       </View>      
-    </ScrollView>
+      </ScrollView>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => alert('Shop Now')}>
+          <Text style={styles.buttonText}>Shop Now</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 10,
       backgroundColor: '#fff',
+    },
+    scrollContent: {
+      padding: 10,
     },
     header: {
       alignItems: 'center',
@@ -88,6 +168,6 @@ const styles = StyleSheet.create({
     buttonText: {
       color: '#fff',
       fontWeight: 'bold',
-      fontSize:'30px'
+      fontSize: 30,
     },
   });
